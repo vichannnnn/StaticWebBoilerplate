@@ -1,0 +1,41 @@
+{
+  "Metadata": {
+    "Index": {
+      "title": "マイサイト",
+      "description": "私のウェブサイトへようこそ",
+      "keywords": "ウェブサイト,ポートフォリオ"
+    },
+    "Links": {
+      "title": "マイサイト | リンク",
+      "description": "オンラインで私を見つける",
+      "keywords": "リンク,ソーシャル"
+    }
+  },
+  "LandingPage": {
+    "title_one": "マイサイトへようこそ",
+    "description_paragraph_one": "こんにちは！これは日英i18nをサポートした個人ウェブサイトボイラープレートです。",
+    "description_paragraph_two": "messages/en.jsonとmessages/ja.jsonを編集してカスタマイズしてください。",
+    "description_paragraph_three": "Next.js、Tailwind CSS、next-intlで構築されています。"
+  },
+  "NotFoundPage": {
+    "title": "404 - ページが見つかりません",
+    "description": "お探しのページは存在しません。",
+    "back_to_home": "ホームに戻る"
+  },
+  "Links": {
+    "personal_title": "ソーシャルリンク",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "project_title": "プロジェクト",
+    "example_project": "サンプルプロジェクト"
+  },
+  "Buttons": {
+    "about": "プロフィール",
+    "blog": "ブログ",
+    "links": "リンク",
+    "resume": "履歴書"
+  },
+  "Footer": {
+    "text": "お問い合わせ: your@email.com"
+  }
+}

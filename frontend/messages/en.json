@@ -1,0 +1,41 @@
+{
+  "Metadata": {
+    "Index": {
+      "title": "My Site",
+      "description": "Welcome to my website",
+      "keywords": "website,portfolio"
+    },
+    "Links": {
+      "title": "My Site | Links",
+      "description": "Find me online",
+      "keywords": "links,social"
+    }
+  },
+  "LandingPage": {
+    "title_one": "Welcome to My Site",
+    "description_paragraph_one": "Hello! This is a personal website boilerplate with EN/JA i18n support.",
+    "description_paragraph_two": "Edit this content in messages/en.json and messages/ja.json to customize.",
+    "description_paragraph_three": "Built with Next.js, Tailwind CSS, and next-intl for internationalization."
+  },
+  "NotFoundPage": {
+    "title": "404 - Page Not Found",
+    "description": "The page you're looking for doesn't exist.",
+    "back_to_home": "Back to home"
+  },
+  "Links": {
+    "personal_title": "Social Links",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "project_title": "Projects",
+    "example_project": "Example Project"
+  },
+  "Buttons": {
+    "about": "About",
+    "blog": "Blog",
+    "links": "Links",
+    "resume": "Resume"
+  },
+  "Footer": {
+    "text": "Contact: your@email.com"
+  }
+}
