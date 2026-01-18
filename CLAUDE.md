@@ -2,14 +2,15 @@
 
 ## Project Overview
 <!-- auto-generated-start:overview -->
-[Brief description of your project goes here]
+A boilerplate for building static websites. Provides a minimal, production-ready foundation for rapid development with modern tooling.
 <!-- auto-generated-end:overview -->
 
 ## Key Objectives
 <!-- auto-generated-start:objectives -->
-- [Objective 1]
-- [Objective 2]
-- [Objective 3]
+- Enable fast development with quick setup and rapid prototyping
+- Provide modern tooling including hot reload, bundling, and optimization
+- Deliver production-ready builds with deployment optimizations
+- Maintain minimal setup with few dependencies and simple configuration
 <!-- auto-generated-end:objectives -->
 
 ## Project Structure
@@ -44,10 +45,10 @@
 ## Common Commands
 <!-- auto-generated-start:commands -->
 ```bash
-# Add your common project commands here
-# npm install
-# npm run dev
-# npm test
+pnpm install        # Install dependencies
+pnpm dev            # Start development server with hot reload
+pnpm build          # Build for production
+pnpm preview        # Preview production build locally
 ```
 <!-- auto-generated-end:commands -->
 
@@ -102,5 +103,8 @@ Before starting any task:
 
 ## Additional Notes
 <!-- auto-generated-start:notes -->
-[Any other important information for Claude to know about this project]
+**Tech Stack:**
+- TypeScript for type-safe JavaScript development
+- Tailwind CSS for utility-first styling
+- pnpm as the package manager
 <!-- auto-generated-end:notes -->
