@@ -1,29 +1,31 @@
 {
   "Metadata": {
     "Index": {
-      "title": "My Site",
-      "description": "Welcome to my website",
-      "keywords": "website,portfolio"
+      "title": "Your Product Name",
+      "description": "Build something amazing with our modern SaaS boilerplate",
+      "keywords": "saas,product,landing,boilerplate"
     },
     "Links": {
-      "title": "My Site | Links",
-      "description": "Find me online",
-      "keywords": "links,social"
+      "title": "Your Product | Links",
+      "description": "Connect with us",
+      "keywords": "links,social,network"
     }
   },
   "LandingPage": {
-    "title_one": "Welcome to My Site",
-    "description_paragraph_one": "Hello! This is a personal website boilerplate with EN/JA i18n support.",
-    "description_paragraph_two": "Edit this content in messages/en.json and messages/ja.json to customize.",
-    "description_paragraph_three": "Built with Next.js, Tailwind CSS, and next-intl for internationalization."
+    "label": "Now in Beta",
+    "title": "Build Your Next Big Idea",
+    "description": "A modern boilerplate for SaaS and product landing pages. Beautiful design, ready for customization, with EN/JA internationalization built-in.",
+    "cta_primary": "Join Waitlist",
+    "cta_secondary": "Learn More",
+    "status": "Ready for launch"
   },
   "NotFoundPage": {
-    "title": "404 - Page Not Found",
+    "title": "Page Not Found",
     "description": "The page you're looking for doesn't exist.",
-    "back_to_home": "Back to home"
+    "back_to_home": "Back to Home"
   },
   "Links": {
-    "personal_title": "Social Links",
+    "personal_title": "Connect",
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "project_title": "Projects",
@@ -36,6 +38,137 @@
     "resume": "Resume"
   },
   "Footer": {
-    "text": "Contact: your@email.com"
+    "text": "Built with Next.js & Tailwind",
+    "status": "All systems operational"
+  },
+  "About": {
+    "section_label": "System Info",
+    "title": "Technical Specification Sheet",
+    "spec": {
+      "location_label": "Location",
+      "location_value": "Tokyo, Japan",
+      "uptime_label": "System Uptime",
+      "coffee_label": "Coffee Level"
+    },
+    "modules_label": "Core Modules",
+    "modules": {
+      "typescript": "TypeScript",
+      "react": "React",
+      "nextjs": "Next.js",
+      "nodejs": "Node.js",
+      "tailwind": "Tailwind CSS"
+    },
+    "philosophy_label": "Operating Philosophy",
+    "philosophy": "Ship fast, iterate faster. Code is a means to an end, not the end itself.",
+    "description": "Full-stack developer passionate about building products that solve real problems. I believe in clean code, user-first design, and continuous learning."
+  },
+  "Projects": {
+    "section_label": "Achievement Log",
+    "title": "Achievements Unlocked",
+    "project1": {
+      "title": "E-Commerce Platform",
+      "tagline": "Full-stack marketplace with real-time inventory",
+      "rarity": "Legendary",
+      "stat1_value": "50",
+      "stat1_suffix": "K",
+      "stat1_label": "Users",
+      "stat2_value": "99",
+      "stat2_suffix": "%",
+      "stat2_label": "Uptime"
+    },
+    "project2": {
+      "title": "Analytics Dashboard",
+      "tagline": "Real-time data visualization platform",
+      "rarity": "Epic",
+      "stat1_value": "1",
+      "stat1_suffix": "M",
+      "stat1_label": "Data Points",
+      "stat2_value": "200",
+      "stat2_suffix": "ms",
+      "stat2_label": "Response"
+    },
+    "project3": {
+      "title": "Mobile App",
+      "tagline": "Cross-platform productivity tool",
+      "rarity": "Rare",
+      "stat1_value": "10",
+      "stat1_suffix": "K",
+      "stat1_label": "Downloads",
+      "stat2_value": "4",
+      "stat2_suffix": ".8",
+      "stat2_label": "Rating"
+    }
+  },
+  "Experience": {
+    "section_label": "Career Speedrun",
+    "title": "Speedrun Splits",
+    "subtitle": "ANY% (WR PENDING)",
+    "item1": {
+      "company": "Tech Startup Inc.",
+      "role": "Senior Full-Stack Engineer",
+      "duration": "2022 - Present",
+      "description": "Leading development of core platform features, mentoring junior developers, and establishing engineering best practices.",
+      "isPB": "true"
+    },
+    "item2": {
+      "company": "Digital Agency Co.",
+      "role": "Full-Stack Developer",
+      "duration": "2020 - 2022",
+      "description": "Built custom web applications for enterprise clients using React, Node.js, and cloud services.",
+      "isPB": "false"
+    },
+    "item3": {
+      "company": "Freelance",
+      "role": "Web Developer",
+      "duration": "2018 - 2020",
+      "description": "Developed websites and applications for small businesses and startups.",
+      "isPB": "false"
+    }
+  },
+  "Skills": {
+    "section_label": "Tier List",
+    "title": "Skill Tier List",
+    "tiers": {
+      "s": "Main - Daily drivers I know inside out",
+      "a": "Comfortable - Solid proficiency, ship with confidence",
+      "b": "Working Knowledge - Can build, may need docs",
+      "c": "Learning - Actively expanding, excited to grow"
+    },
+    "skills": {
+      "typescript": "TypeScript",
+      "react": "React",
+      "nextjs": "Next.js",
+      "nodejs": "Node.js",
+      "tailwind": "Tailwind CSS",
+      "git": "Git",
+      "python": "Python",
+      "docker": "Docker",
+      "postgresql": "PostgreSQL",
+      "rust": "Rust",
+      "graphql": "GraphQL",
+      "aws": "AWS"
+    },
+    "tooltips": {
+      "typescript": "5+ years of production TypeScript",
+      "react": "Building UIs since React 16",
+      "nextjs": "App Router, SSR, ISR, the works",
+      "nodejs": "REST APIs, microservices, CLI tools",
+      "tailwind": "Utility-first for life",
+      "git": "Rebasing without fear",
+      "python": "Scripting, data analysis, automation",
+      "docker": "Containerization and orchestration",
+      "postgresql": "Database design and optimization",
+      "rust": "Systems programming exploration",
+      "graphql": "Schema design and resolvers",
+      "aws": "EC2, S3, Lambda, RDS"
+    }
+  },
+  "Contact": {
+    "title": "ERROR 404: NOT FOUND",
+    "subtitle": "Just kidding. I'm right here.",
+    "cta_linkedin": "Connect on LinkedIn",
+    "cta_email": "Send Email",
+    "github": "GitHub",
+    "twitter": "Twitter"
   }
 }

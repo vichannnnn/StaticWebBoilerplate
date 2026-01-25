@@ -1,44 +1,67 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-@layer base {
-  @font-face {
-    font-family: PatrickHandSC;
-    src:
-      local('PatrickHandSC'),
-      url('../fonts/PatrickHandSC-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+@import "tailwindcss";
+
+@theme {
+  --color-void: #0D0D0D;
+  --color-charcoal: #1A1A1A;
+  --color-tangerine: #FF6B35;
+  --color-glitch: #FFE66D;
+  --color-mint: #4ECDC4;
+  --color-off-white: #FAFAFA;
+  --color-cool-gray: #A0A0A0;
+  --color-cool-gray-dark: #666666;
+
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', 'Consolas', monospace;
+
+  --shadow-glow-tangerine: 0 0 20px rgba(255, 107, 53, 0.3);
+  --shadow-glow-tangerine-lg: 0 0 30px rgba(255, 107, 53, 0.4), 0 0 60px rgba(255, 107, 53, 0.2);
+  --shadow-glow-mint: 0 0 20px rgba(78, 205, 196, 0.3);
+  --shadow-glow-glitch: 0 0 20px rgba(255, 230, 109, 0.3);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 107, 53, 0.1);
+
+  --animate-blink: blink 1s step-end infinite;
+  --animate-fade-in: fadeIn 0.6s ease-out;
+  --animate-fade-up: fadeUp 0.6s ease-out;
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 3s ease-in-out infinite;
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
   }
 
-  @font-face {
-    font-family: PressStart2P;
-    src:
-      local('PressStart2P'),
-      url('../fonts/PressStart2P-Regular.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
-  @font-face {
-    font-family: Fafo Nihongo;
-    src:
-      local('Fafo Nihongo'),
-      url('../fonts/Fafo Nihongo.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
   }
 }
 
 :root {
-  line-height: 1.5;
+  line-height: 1.6;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: #213547;
-  background-color: #fcfbf8;
-
+  color-scheme: dark;
+  color: var(--color-off-white);
+  background-color: var(--color-void);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -46,55 +69,332 @@
   -webkit-text-size-adjust: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-void);
 }
 
 a {
-  font-family: 'PatrickHandSC', 'Fafo Nihongo', sans-serif;
+  font-family: var(--font-body);
   font-weight: 500;
-  font-size: 0.875em;
-  text-decoration: inherit;
+  text-decoration: none;
+  color: var(--color-off-white);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-tangerine);
 }
 
 p {
-  font-family: 'PatrickHandSC', 'Fafo Nihongo', sans-serif;
-  font-size: 0.875em;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-cool-gray);
+  line-height: 1.7;
 }
 
 h1 {
-  font-family: 'PatrickHandSC', 'Fafo Nihongo', sans-serif;
-  font-size: 2em;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
   line-height: 1.1;
+  color: var(--color-off-white);
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-family: 'PatrickHandSC', 'Fafo Nihongo', sans-serif;
-  font-size: 1.5em;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-off-white);
+  letter-spacing: -0.01em;
 }
 
 h3 {
-  font-family: 'PatrickHandSC', 'Fafo Nihongo', sans-serif;
-  font-size: 1.17em;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-off-white);
 }
 
 h4 {
-  font-family: 'PatrickHandSC', 'Fafo Nihongo', sans-serif;
-  font-size: 1em;
-}
-
-body {
-  font-family: 'PatrickHandSC', 'Fafo Nihongo', sans-serif;
-  margin: 0;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-off-white);
 }
 
 button {
   cursor: pointer;
+}
+
+.animate-blink {
+  animation: var(--animate-blink);
+}
+
+.animate-fade-in {
+  animation: var(--animate-fade-in);
+}
+
+.animate-fade-up {
+  animation: var(--animate-fade-up);
+}
+
+.animate-float {
+  animation: var(--animate-float);
+}
+
+.animate-pulse-slow {
+  animation: var(--animate-pulse-slow);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  background-color: var(--color-tangerine);
+  color: var(--color-void);
+  font-family: var(--font-display);
+  font-weight: 600;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  box-shadow: var(--shadow-glow-tangerine);
+  transform: scale(1.02);
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-void), 0 0 0 4px var(--color-tangerine);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  background-color: var(--color-charcoal);
+  color: var(--color-off-white);
+  font-family: var(--font-display);
+  font-weight: 500;
+  border: 1px solid var(--color-cool-gray-dark);
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-tangerine);
+  color: var(--color-tangerine);
+}
+
+.btn-secondary:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-void), 0 0 0 4px var(--color-tangerine);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--color-tangerine), var(--color-glitch));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card {
+  background-color: var(--color-charcoal);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(102, 102, 102, 0.3);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(255, 107, 53, 0.5);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-tangerine);
+}
+
+.card-achievement {
+  background: linear-gradient(135deg, var(--color-charcoal) 0%, rgba(26, 26, 26, 0.8) 100%);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(102, 102, 102, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card-achievement::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transition: left 0.5s ease;
+}
+
+.card-achievement:hover::before {
+  left: 100%;
+}
+
+.card-achievement:hover {
+  border-color: rgba(255, 107, 53, 0.5);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+.rarity-legendary {
+  background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+.rarity-epic {
+  background: linear-gradient(90deg, #A855F7, #EC4899, #A855F7);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+.rarity-rare {
+  background: linear-gradient(90deg, #3B82F6, #06B6D4, #3B82F6);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+.tier-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.tier-s {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: var(--color-void);
+}
+
+.tier-a {
+  background: linear-gradient(135deg, #A855F7, #EC4899);
+  color: var(--color-off-white);
+}
+
+.tier-b {
+  background: linear-gradient(135deg, #3B82F6, #06B6D4);
+  color: var(--color-off-white);
+}
+
+.tier-c {
+  background: linear-gradient(135deg, #22C55E, #10B981);
+  color: var(--color-void);
+}
+
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-charcoal);
+  border: 1px solid rgba(102, 102, 102, 0.3);
+  border-radius: 9999px;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--color-off-white);
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.skill-pill:hover {
+  border-color: var(--color-tangerine);
+  transform: scale(1.05);
+}
+
+.pb-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  border-radius: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--color-void);
+  text-transform: uppercase;
+}
+
+.glitch-text {
+  position: relative;
+  animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+  0%, 90%, 100% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+  92% {
+    transform: translate(-2px, 2px);
+    text-shadow: 2px 0 var(--color-tangerine), -2px 0 var(--color-mint);
+  }
+  94% {
+    transform: translate(2px, -2px);
+    text-shadow: -2px 0 var(--color-tangerine), 2px 0 var(--color-mint);
+  }
+  96% {
+    transform: translate(-1px, 1px);
+    text-shadow: 1px 0 var(--color-glitch), -1px 0 var(--color-mint);
+  }
+  98% {
+    transform: translate(1px, -1px);
+    text-shadow: -1px 0 var(--color-glitch), 1px 0 var(--color-tangerine);
+  }
+}
+
+.progress-bar {
+  height: 0.5rem;
+  background-color: rgba(102, 102, 102, 0.3);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-tangerine), var(--color-glitch));
+  border-radius: 9999px;
+  transition: width 0.5s ease;
 }

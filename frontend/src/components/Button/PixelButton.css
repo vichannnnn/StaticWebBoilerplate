@@ -3,20 +3,19 @@
   --pixel-shadow-size: 6px;
 }
 
-/* ------------------- Button Grid styles ------------------- */
 .pixel-grid {
   position: relative;
   display: grid;
   row-gap: 0;
   column-gap: 0;
   grid-template-columns: repeat(20, var(--pixel-size));
-  filter: drop-shadow(0 var(--pixel-shadow-size) 0 #545454);
+  filter: drop-shadow(0 var(--pixel-shadow-size) 0 #FF6B35);
   cursor: pointer;
 }
 
 .pixel-grid:active {
   transform: translate(0, var(--pixel-shadow-size));
-  filter: drop-shadow(0 0 0 #545454);
+  filter: drop-shadow(0 0 0 #FF6B35);
 }
 
 .pixel-container {
@@ -25,14 +24,14 @@
   align-items: center;
 }
 
-/* ------------------- text styles ------------------- */
-
 .text {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
+  color: #FAFAFA;
   font-size: 12px;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 600;
   text-align: center;
   filter: none;
   position: absolute;
@@ -46,8 +45,6 @@
   vertical-align: middle;
 }
 
-/* ------------------- pixel styles ------------------- */
-
 .transparent {
   background-color: transparent;
   height: var(--pixel-size);
@@ -55,9 +52,10 @@
 }
 
 .black {
-  background-color: black;
+  background-color: #1A1A1A;
   height: var(--pixel-size);
   width: var(--pixel-size);
+  border: 1px solid #FF6B35;
 }
 
 .black.top {
@@ -65,39 +63,49 @@
 }
 
 .pixel-grid:active .black.top {
-  filter: drop-shadow(0 5px 0 #545454);
+  filter: drop-shadow(0 5px 0 #FF6B35);
 }
 
 .black.bottom {
   height: calc(var(--pixel-size) - 5px);
   margin-top: 5px;
-  filter: drop-shadow(0 -5px 0 #fcfbf8);
+  filter: drop-shadow(0 -5px 0 #1A1A1A);
 }
 
 .white {
-  background-color: white;
+  background-color: #1A1A1A;
+  border: 1px solid #FF6B35;
   height: var(--pixel-size);
   width: var(--pixel-size);
 }
 
 .corner {
-  background-color: black;
+  background-color: #1A1A1A;
+  border: 1px solid #FF6B35;
   height: var(--pixel-size);
   width: var(--pixel-size);
 }
 
 .corner.top-left {
-  border-top-left-radius: 8px;
+  border-top-left-radius: 0;
 }
 
 .corner.top-right {
-  border-top-right-radius: 8px;
+  border-top-right-radius: 0;
 }
 
 .corner.bottom-left {
-  border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 0;
 }
 
 .corner.bottom-right {
-  border-bottom-right-radius: 8px;
+  border-bottom-right-radius: 0;
+}
+
+.pixel-grid:hover {
+  filter: drop-shadow(0 var(--pixel-shadow-size) 0 #FF6B35) drop-shadow(0 0 15px rgba(255, 107, 53, 0.4));
+}
+
+.pixel-grid:hover .text {
+  color: #FFE66D;
 }

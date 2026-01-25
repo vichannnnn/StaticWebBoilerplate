@@ -1,41 +1,174 @@
 {
   "Metadata": {
     "Index": {
-      "title": "マイサイト",
-      "description": "私のウェブサイトへようこそ",
-      "keywords": "ウェブサイト,ポートフォリオ"
+      "title": "プロダクト名",
+      "description": "モダンなSaaSボイラープレートで素晴らしいものを作ろう",
+      "keywords": "saas,プロダクト,ランディング,ボイラープレート"
     },
     "Links": {
-      "title": "マイサイト | リンク",
-      "description": "オンラインで私を見つける",
-      "keywords": "リンク,ソーシャル"
+      "title": "プロダクト | リンク",
+      "description": "つながりましょう",
+      "keywords": "リンク,ソーシャル,ネットワーク"
     }
   },
   "LandingPage": {
-    "title_one": "マイサイトへようこそ",
-    "description_paragraph_one": "こんにちは！これは日英i18nをサポートした個人ウェブサイトボイラープレートです。",
-    "description_paragraph_two": "messages/en.jsonとmessages/ja.jsonを編集してカスタマイズしてください。",
-    "description_paragraph_three": "Next.js、Tailwind CSS、next-intlで構築されています。"
+    "label": "ベータ版公開中",
+    "title": "次のビッグアイデアを形に",
+    "description": "SaaSやプロダクトのランディングページ向けモダンボイラープレート。美しいデザイン、カスタマイズ可能、日英対応。",
+    "cta_primary": "ウェイトリストに参加",
+    "cta_secondary": "詳しく見る",
+    "status": "ローンチ準備完了"
   },
   "NotFoundPage": {
-    "title": "404 - ページが見つかりません",
+    "title": "ページが見つかりません",
     "description": "お探しのページは存在しません。",
-    "back_to_home": "ホームに戻る"
+    "back_to_home": "ホームへ戻る"
   },
   "Links": {
-    "personal_title": "ソーシャルリンク",
+    "personal_title": "つながる",
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "project_title": "プロジェクト",
     "example_project": "サンプルプロジェクト"
   },
   "Buttons": {
-    "about": "プロフィール",
+    "about": "概要",
     "blog": "ブログ",
     "links": "リンク",
     "resume": "履歴書"
   },
   "Footer": {
-    "text": "お問い合わせ: your@email.com"
+    "text": "Next.js & Tailwindで構築",
+    "status": "全システム正常稼働中"
+  },
+  "About": {
+    "section_label": "システム情報",
+    "title": "技術仕様書",
+    "spec": {
+      "location_label": "所在地",
+      "location_value": "東京",
+      "uptime_label": "システム稼働時間",
+      "coffee_label": "コーヒーレベル"
+    },
+    "modules_label": "コアモジュール",
+    "modules": {
+      "typescript": "TypeScript",
+      "react": "React",
+      "nextjs": "Next.js",
+      "nodejs": "Node.js",
+      "tailwind": "Tailwind CSS"
+    },
+    "philosophy_label": "行動指針",
+    "philosophy": "速く出荷し、もっと速く改善する。コードは目的を達成する手段であり、目的そのものではない。",
+    "description": "フルスタック開発者として、実際の問題を解決するプロダクト作りに情熱を注いでいます。クリーンなコード、ユーザーファーストのデザイン、継続的な学習を大切にしています。"
+  },
+  "Projects": {
+    "section_label": "実績ログ",
+    "title": "アンロック済み実績",
+    "project1": {
+      "title": "ECプラットフォーム",
+      "tagline": "リアルタイム在庫管理付きフルスタックマーケットプレイス",
+      "rarity": "レジェンダリー",
+      "stat1_value": "50",
+      "stat1_suffix": "K",
+      "stat1_label": "ユーザー",
+      "stat2_value": "99",
+      "stat2_suffix": "%",
+      "stat2_label": "稼働率"
+    },
+    "project2": {
+      "title": "分析ダッシュボード",
+      "tagline": "リアルタイムデータ可視化プラットフォーム",
+      "rarity": "エピック",
+      "stat1_value": "1",
+      "stat1_suffix": "M",
+      "stat1_label": "データポイント",
+      "stat2_value": "200",
+      "stat2_suffix": "ms",
+      "stat2_label": "応答時間"
+    },
+    "project3": {
+      "title": "モバイルアプリ",
+      "tagline": "クロスプラットフォーム生産性ツール",
+      "rarity": "レア",
+      "stat1_value": "10",
+      "stat1_suffix": "K",
+      "stat1_label": "ダウンロード",
+      "stat2_value": "4",
+      "stat2_suffix": ".8",
+      "stat2_label": "評価"
+    }
+  },
+  "Experience": {
+    "section_label": "キャリアスピードラン",
+    "title": "スピードラン記録",
+    "subtitle": "ANY% (世界記録更新中)",
+    "item1": {
+      "company": "テックスタートアップ株式会社",
+      "role": "シニアフルスタックエンジニア",
+      "duration": "2022 - 現在",
+      "description": "コアプラットフォーム機能の開発をリードし、ジュニア開発者の指導とエンジニアリングベストプラクティスの確立を担当。",
+      "isPB": "true"
+    },
+    "item2": {
+      "company": "デジタルエージェンシー株式会社",
+      "role": "フルスタック開発者",
+      "duration": "2020 - 2022",
+      "description": "React、Node.js、クラウドサービスを使用して、エンタープライズクライアント向けのカスタムWebアプリケーションを構築。",
+      "isPB": "false"
+    },
+    "item3": {
+      "company": "フリーランス",
+      "role": "Web開発者",
+      "duration": "2018 - 2020",
+      "description": "中小企業やスタートアップ向けのWebサイトやアプリケーションを開発。",
+      "isPB": "false"
+    }
+  },
+  "Skills": {
+    "section_label": "ティアリスト",
+    "title": "スキルティアリスト",
+    "tiers": {
+      "s": "メイン - 熟知している日常ツール",
+      "a": "得意 - 自信を持ってデプロイできる",
+      "b": "実務知識 - 構築可能、ドキュメント参照あり",
+      "c": "学習中 - 積極的に習得中、成長が楽しみ"
+    },
+    "skills": {
+      "typescript": "TypeScript",
+      "react": "React",
+      "nextjs": "Next.js",
+      "nodejs": "Node.js",
+      "tailwind": "Tailwind CSS",
+      "git": "Git",
+      "python": "Python",
+      "docker": "Docker",
+      "postgresql": "PostgreSQL",
+      "rust": "Rust",
+      "graphql": "GraphQL",
+      "aws": "AWS"
+    },
+    "tooltips": {
+      "typescript": "本番環境で5年以上の経験",
+      "react": "React 16からUI構築",
+      "nextjs": "App Router、SSR、ISR対応",
+      "nodejs": "REST API、マイクロサービス、CLIツール",
+      "tailwind": "ユーティリティファースト信者",
+      "git": "リベースも恐れない",
+      "python": "スクリプト、データ分析、自動化",
+      "docker": "コンテナ化とオーケストレーション",
+      "postgresql": "データベース設計と最適化",
+      "rust": "システムプログラミング探求中",
+      "graphql": "スキーマ設計とリゾルバー",
+      "aws": "EC2、S3、Lambda、RDS"
+    }
+  },
+  "Contact": {
+    "title": "エラー404：見つかりません",
+    "subtitle": "冗談です。ここにいますよ。",
+    "cta_linkedin": "LinkedInでつながる",
+    "cta_email": "メールを送る",
+    "github": "GitHub",
+    "twitter": "Twitter"
   }
 }

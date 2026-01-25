@@ -35,12 +35,43 @@ export const LanguageToggleButton = () => {
     <>
       {isMedium ? (
         <>
-          <Button onClick={handleClick} color='inherit'>
+          <Button onClick={handleClick}>
             {localeMap[locale].flag} {isXLarge && localeMap[locale].name}
           </Button>
-          <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
+          <Menu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+            sx={{
+              '& .MuiPaper-root': {
+                backgroundColor: '#1A1A1A',
+                border: '1px solid #666666',
+                borderRadius: '12px',
+                marginTop: '8px',
+              },
+            }}
+          >
             {(Object.keys(localeMap) as Array<'en' | 'ja'>).map((key) => (
-              <MenuItem key={key} selected={key === locale} onClick={handleClose}>
+              <MenuItem
+                key={key}
+                selected={key === locale}
+                onClick={handleClose}
+                sx={{
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  color: '#FAFAFA',
+                  '&:hover': {
+                    backgroundColor: 'rgba(255, 107, 53, 0.1)',
+                    color: '#FF6B35',
+                  },
+                  '&.Mui-selected': {
+                    backgroundColor: 'rgba(255, 107, 53, 0.15)',
+                    color: '#FF6B35',
+                  },
+                  '&.Mui-selected:hover': {
+                    backgroundColor: 'rgba(255, 107, 53, 0.2)',
+                  },
+                }}
+              >
                 <Link href={currentPath} locale={key} passHref>
                   {localeMap[key].flag} {localeMap[key].name}
                 </Link>
@@ -51,9 +82,30 @@ export const LanguageToggleButton = () => {
       ) : (
         <>
           {(Object.keys(localeMap) as Array<'en' | 'ja'>).map((key) => (
-            <MenuItem key={key} selected={key === locale} onClick={handleClose}>
+            <MenuItem
+              key={key}
+              selected={key === locale}
+              onClick={handleClose}
+              sx={{
+                fontFamily: 'Space Grotesk, sans-serif',
+                color: '#FAFAFA',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 107, 53, 0.1)',
+                  color: '#FF6B35',
+                },
+                '&.Mui-selected': {
+                  backgroundColor: 'rgba(255, 107, 53, 0.15)',
+                  color: '#FF6B35',
+                },
+                '&.Mui-selected:hover': {
+                  backgroundColor: 'rgba(255, 107, 53, 0.2)',
+                },
+              }}
+            >
               <Link href={currentPath} locale={key} passHref>
-                <ListItemIcon>{localeMap[key].flag}</ListItemIcon>
+                <ListItemIcon sx={{ color: 'inherit', minWidth: '32px' }}>
+                  {localeMap[key].flag}
+                </ListItemIcon>
                 {localeMap[key].name}
               </Link>
             </MenuItem>

@@ -14,28 +14,33 @@ export const Button = forwardRef<HTMLButtonElement, ButtonBaseProps>(
         ref={ref}
         variant='outlined'
         sx={{
-          border: 'none',
-          backgroundColor: 'none',
-          color: 'black',
-          textTransform: 'capitalize',
-          fontFamily: 'PatrickHandSC, sans-serif',
-          padding: '8px 24px',
-          fontSize: '20px',
-          borderRadius: '50px',
+          border: '1px solid #666666',
+          backgroundColor: '#1A1A1A',
+          color: '#FAFAFA',
+          textTransform: 'none',
+          fontFamily: 'Space Grotesk, system-ui, sans-serif',
+          padding: '10px 24px',
+          fontSize: '14px',
+          fontWeight: 500,
+          borderRadius: '12px',
+          letterSpacing: '0',
+          transition: 'all 0.2s ease',
           '&:hover': {
-            backgroundColor: '#aed1ca',
-            border: 'none',
+            backgroundColor: '#1A1A1A',
+            border: '1px solid #FF6B35',
+            color: '#FF6B35',
+            boxShadow: '0 0 20px rgba(255, 107, 53, 0.2)',
           },
           '&:focus': {
-            border: 'none',
+            border: '1px solid #FF6B35',
             outline: 'none',
-            boxShadow: 'none',
+            boxShadow: '0 0 0 2px rgba(255, 107, 53, 0.3)',
           },
           ...sx,
         }}
         {...props}
       >
-        <p>{children}</p>
+        <span>{children}</span>
       </ButtonBase>
     );
   },

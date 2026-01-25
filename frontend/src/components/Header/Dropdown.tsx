@@ -43,34 +43,78 @@ export const Dropdown = () => {
         MenuListProps={{
           'aria-labelledby': 'right-button',
         }}
+        sx={{
+          '& .MuiPaper-root': {
+            backgroundColor: '#1A1A1A',
+            border: '1px solid #666666',
+            borderRadius: '12px',
+            marginTop: '8px',
+          },
+        }}
       >
         <Link href='/' passHref>
-          <MenuItem>
-            <ListItemIcon>
+          <MenuItem
+            sx={{
+              fontFamily: 'Space Grotesk, sans-serif',
+              color: '#FAFAFA',
+              '&:hover': {
+                backgroundColor: 'rgba(255, 107, 53, 0.1)',
+                color: '#FF6B35',
+              },
+            }}
+          >
+            <ListItemIcon sx={{ color: 'inherit', minWidth: '32px' }}>
               <InfoIcon fontSize='small' />
             </ListItemIcon>
             {t('about')}
           </MenuItem>
         </Link>
         <Link href='#' passHref>
-          <MenuItem>
-            <ListItemIcon>
+          <MenuItem
+            sx={{
+              fontFamily: 'Space Grotesk, sans-serif',
+              color: '#FAFAFA',
+              '&:hover': {
+                backgroundColor: 'rgba(255, 107, 53, 0.1)',
+                color: '#FF6B35',
+              },
+            }}
+          >
+            <ListItemIcon sx={{ color: 'inherit', minWidth: '32px' }}>
               <ArticleIcon fontSize='small' />
             </ListItemIcon>
             {t('blog')}
           </MenuItem>
         </Link>
         <Link href='/links' passHref>
-          <MenuItem>
-            <ListItemIcon>
+          <MenuItem
+            sx={{
+              fontFamily: 'Space Grotesk, sans-serif',
+              color: '#FAFAFA',
+              '&:hover': {
+                backgroundColor: 'rgba(255, 107, 53, 0.1)',
+                color: '#FF6B35',
+              },
+            }}
+          >
+            <ListItemIcon sx={{ color: 'inherit', minWidth: '32px' }}>
               <LinkIcon fontSize='small' />
             </ListItemIcon>
             {t('links')}
           </MenuItem>
         </Link>
         <Link href='#' passHref>
-          <MenuItem>
-            <ListItemIcon>
+          <MenuItem
+            sx={{
+              fontFamily: 'Space Grotesk, sans-serif',
+              color: '#FAFAFA',
+              '&:hover': {
+                backgroundColor: 'rgba(255, 107, 53, 0.1)',
+                color: '#FF6B35',
+              },
+            }}
+          >
+            <ListItemIcon sx={{ color: 'inherit', minWidth: '32px' }}>
               <DescriptionIcon fontSize='small' />
             </ListItemIcon>
             {t('resume')}
