@@ -15,22 +15,19 @@ export const Experience = () => {
         <p className="font-mono text-sm text-cool-gray mb-12">{t('subtitle')}</p>
 
         <div className="space-y-6">
-          {experienceItems.map((item, index) => {
-            const isPB = t(`${item}.isPB`) === 'true';
-            return (
-              <div
-                key={item}
-                className="card flex flex-col md:flex-row gap-4 md:gap-8 items-start"
-              >
-                <div className="flex items-center gap-4 min-w-fit">
-                  <span className="font-mono text-2xl font-bold text-tangerine">
-                    [{String(index + 1).padStart(2, '0')}]
-                  </span>
-                  <span className="font-mono text-sm text-cool-gray-dark">
-                    {t(`${item}.duration`)}
-                  </span>
-                  {isPB && <span className="pb-badge">PB</span>}
-                </div>
+          {experienceItems.map((item, index) => (
+            <div
+              key={item}
+              className="card flex flex-col md:flex-row gap-4 md:gap-8 items-start"
+            >
+              <div className="flex items-center gap-4 min-w-fit">
+                <span className="font-mono text-2xl font-bold text-tangerine">
+                  [{String(index + 1).padStart(2, '0')}]
+                </span>
+                <span className="font-mono text-sm text-cool-gray-dark">
+                  {t(`${item}.duration`)}
+                </span>
+              </div>
 
                 <div className="flex-1">
                   <h3 className="text-lg font-display font-semibold">{t(`${item}.role`)}</h3>
@@ -38,8 +35,7 @@ export const Experience = () => {
                   <p className="text-cool-gray text-sm">{t(`${item}.description`)}</p>
                 </div>
               </div>
-            );
-          })}
+          ))}
         </div>
       </div>
     </section>

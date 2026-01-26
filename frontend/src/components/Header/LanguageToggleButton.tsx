@@ -1,11 +1,9 @@
 'use client';
 
-import { MouseEvent, useContext, useState } from 'react';
+import { useContext, useState, useRef, useEffect } from 'react';
 import { useLocale } from 'next-intl';
-import { Button } from '@components/Button';
 import { MediaQueryContext } from '@providers/MediaQueryProvider';
 import { Link, usePathname } from '@navigation';
-import { ListItemIcon, Menu, MenuItem } from '@mui/material';
 
 interface LocaleData {
   flag: string;
@@ -21,96 +19,79 @@ export const LanguageToggleButton = () => {
   const currentPath = usePathname();
   const { isMedium, isXLarge } = useContext(MediaQueryContext);
   const locale = useLocale();
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const handleClick = (event: MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <>
       {isMedium ? (
-        <>
-          <Button onClick={handleClick}>
-            {localeMap[locale].flag} {isXLarge && localeMap[locale].name}
-          </Button>
-          <Menu
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-            sx={{
-              '& .MuiPaper-root': {
-                backgroundColor: '#1A1A1A',
-                border: '1px solid #666666',
-                borderRadius: '12px',
-                marginTop: '8px',
-              },
-            }}
+        <div className="relative" ref={dropdownRef}>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="flex items-center gap-2 px-6 py-2.5 rounded-xl border border-cool-gray-dark/50 bg-charcoal/50 backdrop-blur-sm hover:border-tangerine hover:text-tangerine transition-all font-display text-sm"
           >
-            {(Object.keys(localeMap) as Array<'en' | 'ja'>).map((key) => (
-              <MenuItem
-                key={key}
-                selected={key === locale}
-                onClick={handleClose}
-                sx={{
-                  fontFamily: 'Space Grotesk, sans-serif',
-                  color: '#FAFAFA',
-                  '&:hover': {
-                    backgroundColor: 'rgba(255, 107, 53, 0.1)',
-                    color: '#FF6B35',
-                  },
-                  '&.Mui-selected': {
-                    backgroundColor: 'rgba(255, 107, 53, 0.15)',
-                    color: '#FF6B35',
-                  },
-                  '&.Mui-selected:hover': {
-                    backgroundColor: 'rgba(255, 107, 53, 0.2)',
-                  },
-                }}
-              >
-                <Link href={currentPath} locale={key} passHref>
-                  {localeMap[key].flag} {localeMap[key].name}
-                </Link>
-              </MenuItem>
-            ))}
-          </Menu>
-        </>
-      ) : (
-        <>
-          {(Object.keys(localeMap) as Array<'en' | 'ja'>).map((key) => (
-            <MenuItem
-              key={key}
-              selected={key === locale}
-              onClick={handleClose}
-              sx={{
-                fontFamily: 'Space Grotesk, sans-serif',
-                color: '#FAFAFA',
-                '&:hover': {
-                  backgroundColor: 'rgba(255, 107, 53, 0.1)',
-                  color: '#FF6B35',
-                },
-                '&.Mui-selected': {
-                  backgroundColor: 'rgba(255, 107, 53, 0.15)',
-                  color: '#FF6B35',
-                },
-                '&.Mui-selected:hover': {
-                  backgroundColor: 'rgba(255, 107, 53, 0.2)',
-                },
-              }}
+            <span>{localeMap[locale].flag}</span>
+            {isXLarge && <span>{localeMap[locale].name}</span>}
+            <svg
+              className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
-              <Link href={currentPath} locale={key} passHref>
-                <ListItemIcon sx={{ color: 'inherit', minWidth: '32px' }}>
-                  {localeMap[key].flag}
-                </ListItemIcon>
-                {localeMap[key].name}
-              </Link>
-            </MenuItem>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          {isOpen && (
+            <div className="absolute right-0 mt-2 py-2 w-40 rounded-xl border border-cool-gray-dark/50 bg-charcoal backdrop-blur-sm shadow-lg z-50">
+              {(Object.keys(localeMap) as Array<'en' | 'ja'>).map((key) => (
+                <Link
+                  key={key}
+                  href={currentPath}
+                  locale={key}
+                  onClick={() => setIsOpen(false)}
+                  className={`flex items-center gap-3 px-4 py-2 font-display text-sm transition-colors ${
+                    key === locale
+                      ? 'text-tangerine bg-tangerine/10'
+                      : 'text-off-white hover:text-tangerine hover:bg-tangerine/5'
+                  }`}
+                >
+                  <span>{localeMap[key].flag}</span>
+                  <span>{localeMap[key].name}</span>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      ) : (
+        <div className="flex flex-col gap-2 w-full">
+          {(Object.keys(localeMap) as Array<'en' | 'ja'>).map((key) => (
+            <Link
+              key={key}
+              href={currentPath}
+              locale={key}
+              className={`flex items-center gap-3 px-4 py-3 rounded-lg font-display transition-colors ${
+                key === locale
+                  ? 'text-tangerine bg-tangerine/10 border border-tangerine/30'
+                  : 'text-off-white hover:text-tangerine hover:bg-tangerine/5 border border-cool-gray-dark/30'
+              }`}
+            >
+              <span className="text-lg">{localeMap[key].flag}</span>
+              <span>{localeMap[key].name}</span>
+            </Link>
           ))}
-        </>
+        </div>
       )}
     </>
   );
